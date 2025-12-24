@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container, .clock-container {
+  background: #1e293b;
+  padding: 30px 50px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+.time {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+select {
+  margin-left: 5px;
+}
+
+.light {
+  background: #f8fafc;
+  color: #0f172a;
+}

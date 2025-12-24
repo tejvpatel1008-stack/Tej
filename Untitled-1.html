@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="CSS1.css">
+    <link rel="stylesheet" href="JS1.js">
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Date & Time App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .clock-container {
+      text-align: center;
+      padding: 40px 60px;
+      background: #1e293b;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .date {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .time {
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .timezone {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="clock-container">
+  <div class="date" id="date"></div>
+  <div class="time" id="time"></div>
+  <div class="timezone" id="timezone"></div>
+</div>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+
+    const dateOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    };
+
+    const timeOptions = {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    };
+
+    document.getElementById('date').textContent =
+      now.toLocaleDateString(undefined, dateOptions);
+
+    document.getElementById('time').textContent =
+      now.toLocaleTimeString(undefined, timeOptions);
+
+    document.getElementById('timezone').textContent =
+      Intl.DateTimeFormat().resolvedOptions().timeZone;
+  }
+
+  // Update immediately and every second
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+</script>
+
+</body>
+</html>
