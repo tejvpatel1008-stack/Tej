@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validation</title>
     <style>
         span {
-            color: red;
+            color: rgb(231, 9, 202);
             font-size: 14px;
         }
     </style>
 </head>
+
 <body>
 
     <form action="form.php" method="post" onsubmit="return validation()">
 
         Username:<br>
-        <input type="text" id="Username">
+        <input type="text" id="username" name="username">
         <span id="userError"></span><br><br>
 
         Mobile Number:<br>
-        <input type="text" id="mobile">
+        <input type="text" id="mobile" name="mobile">
         <span id="mobileError"></span><br><br>
 
         Email:<br>
-        <input type="text" id="email">
+        <input type="text" id="email" name="email">
         <span id="emailError"></span><br><br>
 
         Password:<br>
-        <input type="password" id="password">
+        <input type="password" id="password" name="password">
         <span id="passwordError"></span><br><br>
 
         Gender:<br>
@@ -38,16 +40,16 @@
         <span id="genderError"></span><br><br>
 
         Course:<br>
-        <select id="course">
+        <select id="course" name="course">
             <option value="">Select Course</option>
-            <option>MCA</option>
-            <option>IMCA</option>
-            <option>MBA</option>
-            <option>IMBA</option>
+            <option value="MCA">MCA</option>
+            <option value="IMCA">IMCA</option>
+            <option value="MBA">MBA</option>
+            <option value="IMBA">IMBA</option>
         </select>
         <span id="courseError"></span><br><br>
 
-        <input type="checkbox" id="terms"> I agree to terms
+        <input type="checkbox" id="terms" name="terms"> I agree to terms
         <span id="termsError"></span><br><br>
 
         <button type="submit">Submit</button>
@@ -57,7 +59,7 @@
     <script>
         function validation() {
 
-            let username = document.getElementById("Username").value.trim();
+            let username = document.getElementById("username").value.trim();
             let mobile = document.getElementById("mobile").value.trim();
             let email = document.getElementById("email").value.trim();
             let password = document.getElementById("password").value.trim();
@@ -66,6 +68,7 @@
             let gender = document.getElementsByName("gender");
 
             document.querySelectorAll("span").forEach(span => span.innerHTML = "");
+
             let mobilePattern = /^[0-9]{10}$/;
             let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -78,14 +81,17 @@
                 document.getElementById("mobileError").innerHTML = "Enter valid 10-digit mobile number";
                 return false;
             }
+
             if (!emailPattern.test(email)) {
                 document.getElementById("emailError").innerHTML = "Enter valid email";
                 return false;
             }
+
             if (password.length < 6) {
                 document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters";
                 return false;
             }
+
             let genderSelected = false;
             for (let i = 0; i < gender.length; i++) {
                 if (gender[i].checked) {
@@ -93,6 +99,7 @@
                     break;
                 }
             }
+
             if (!genderSelected) {
                 document.getElementById("genderError").innerHTML = "Please select gender";
                 return false;
@@ -108,10 +115,10 @@
                 return false;
             }
 
-            alert("Form submitted successfully!");
             return true;
         }
     </script>
 
 </body>
+
 </html>
