@@ -15,10 +15,9 @@ span {
 
 form {
     background: #ffffff;
-    padding: 25px 30px;
+    padding: 10px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 350px;
 }
 
 form input[type="text"],
@@ -36,7 +35,7 @@ form select {
 form input[type="text"]:focus,
 form input[type="password"]:focus,
 form select:focus {
-    border-color: #007bff;
+    border-color: #eceeed;
     outline: none;
 }
 
@@ -46,7 +45,7 @@ form input[type="checkbox"] {
 }
 
 span {
-    color: #e63946;
+    color: #2865d6;
     font-size: 13px;
     display: block;
     margin-top: -10px;
@@ -56,7 +55,7 @@ span {
 button {
     width: 100%;
     padding: 12px;
-    background: #007bff;
+    background: #e8f0ea;
     color: #fff;
     font-size: 16px;
     border: none;

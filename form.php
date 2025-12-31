@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <title>Form Submission</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,6 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><span>Email:</span> <?php echo $email; ?></p>
         <p><span>Gender:</span> <?php echo $gender; ?></p>
         <p><span>Course:</span> <?php echo $course; ?></p>
+        <div class="d-flex justify-content-center align-content-center">
+            <a href="from.html" class="btn btn-info text-center">Go Back</a>
+        </div>
     </div>
 
 </body>

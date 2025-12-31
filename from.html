@@ -12,8 +12,8 @@
 
 <body class="bg-light d-flex justify-content-center align-items-center min-vh-100">
 
-    <div class="card shadow" style="max-width: 400px; width: 100%;">
-        <div class="card-header text-center bg-primary text-light">
+    <div class="card shadow" style="max-width: 600px; width: 100%;">
+        <div class="card-header text-center bg-danger text-light">
             <h3 class="mb-0">Registration Form</h3>
         </div>
         <div class="card-body">
@@ -107,6 +107,7 @@
             let mobile = document.getElementById("mobile").value.trim();
             let email = document.getElementById("email").value.trim();
             let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
             let course = document.getElementById("course").value;
             let terms = document.getElementById("terms").checked;
             let gender = document.getElementsByName("gender");
@@ -141,6 +142,11 @@
                 return false;
             }
 
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match";
+                return false;
+            }
+
             let genderSelected = false;
             for (let i = 0; i < gender.length; i++) {
                 if (gender[i].checked) {
@@ -166,6 +172,7 @@
 
             return true;
         }
+
         function togglePassword() {
             let password = document.getElementById("password");
             let confirmPassword = document.getElementById("confirmPassword");
@@ -180,6 +187,7 @@
         }
 
     </script>
+
 
 </body>
 
