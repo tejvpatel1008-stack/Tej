@@ -49,6 +49,11 @@
                     <span id="confirmPasswordError" class="text-danger small"></span>
                 </div>
 
+                <div class="mb-3 form-check">
+                    <input type="checkbox" id="showPassword" class="form-check-input" onclick="togglePassword()">
+                    <label for="showPassword" class="form-check-label">Show Password</label>
+                </div>
+
                 <div class="mb-3">
                     <label class="form-label">Gender</label>
                     <div class="d-flex gap-3">
@@ -130,7 +135,7 @@
                 document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters";
                 return false;
             }
-            
+
             if (confirmPassword === "") {
                 document.getElementById("confirmPasswordError").innerHTML = "Please confirm your password";
                 return false;
@@ -161,6 +166,19 @@
 
             return true;
         }
+        function togglePassword() {
+            let password = document.getElementById("password");
+            let confirmPassword = document.getElementById("confirmPassword");
+
+            if (document.getElementById("showPassword").checked) {
+                password.type = "text";
+                confirmPassword.type = "text";
+            } else {
+                password.type = "password";
+                confirmPassword.type = "password";
+            }
+        }
+
     </script>
 
 </body>
