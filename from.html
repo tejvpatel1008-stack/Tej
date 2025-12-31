@@ -12,7 +12,7 @@
 
 <body class="bg-light d-flex justify-content-center align-items-center min-vh-100">
 
-    <div class="card shadow" style="max-width: 600px; width: 100%;">
+    <div class="card shadow" style="max-width: 400px; width: 100%;">
         <div class="card-header text-center bg-primary text-light">
             <h3 class="mb-0">Registration Form</h3>
         </div>
@@ -42,6 +42,11 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" id="password" name="password" class="form-control">
                     <span id="passwordError" class="text-danger small"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control">
+                    <span id="confirmPasswordError" class="text-danger small"></span>
                 </div>
 
                 <div class="mb-3">
@@ -123,6 +128,11 @@
 
             if (password.length < 6) {
                 document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters";
+                return false;
+            }
+            
+            if (confirmPassword === "") {
+                document.getElementById("confirmPasswordError").innerHTML = "Please confirm your password";
                 return false;
             }
 
