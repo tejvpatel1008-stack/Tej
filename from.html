@@ -17,8 +17,10 @@
         <span id="userError"></span><br><br>
 
         Mobile Number:<br>
-        <input type="text" id="mobile" name="mobile">
+        <input type="text" id="mobile" name="mobile" maxlength="10"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         <span id="mobileError"></span><br><br>
+
 
         Email:<br>
         <input type="text" id="email" name="email">
